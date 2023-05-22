@@ -9,11 +9,11 @@ La estructura de las CNNs se puede dividir en dos partes claramente diferenciabl
 
 ### Perceptron o Neurona Artificial: La unidad básica de clasificación
 
-En su forma más simple, una neurona artificial toma un conjunto de entradas ($x_i$), multiplica cada entrada por un peso correspondiente ($w_i$) y luego suma las entradas ponderados. Esta suma luego se pasa a través de una función de activación, que determina el valor de salida de la neurona ($y$).
+En su forma más simple, una neurona artificial toma un conjunto de entradas (x), multiplica cada entrada por un peso correspondiente (w) y luego suma las entradas ponderados. Esta suma luego se pasa a través de una función de activación, que determina el valor de salida de la neurona (y).
 
 La función de activación suele ser una función no lineal, como la función sigmoide o la función de unidad rectificada (ReLU), que permite incorporar no-linearidad a los modelos.
 
-Como ejemplo vamos a imaginar que las únicas características que necesitamos para clasificar animales entre gatos y no-gatos son su monería (*cuteness*) y la longitud de su cola (*tail length*). La función deseada tendría una forma silimilar a la siguiente imagen:
+Como ejemplo vamos a imaginar que las únicas características que necesitamos para clasificar animales entre **gatos** y **no-gatos** son: su monería (*cuteness*) y la longitud de su cola (*tail length*). La función deseada tendría una forma silimilar a la siguiente imagen:
 
 ![image](Images/CNN/linearboundary.png)
 
@@ -25,6 +25,8 @@ La representación de la neurona que utilizaríamos sería la siguiente:
 
 Las neuronas artificiales se organizan en capas, con cada neurona en una capa recibiendo entradas de las neuronas de la capa anterior. Las salidas de las neuronas en una capa sirven como las entradas para la capa siguiente, permitiendo que la red disgregue de manera más óptima los datos de entrada dependiendo de su salida esperada.
 
+Combinando varias neuronas ...
+
 ![image](Images/CNN/nonlinearboundary.png)
 
 Hay muchos tipos de capas en una DNN, cada una con un propósito diferente. Algunos tipos comunes de capas incluyen:
@@ -34,9 +36,13 @@ Hay muchos tipos de capas en una DNN, cada una con un propósito diferente. Algu
 - Capa de agrupamiento: Reduce la dimensionalidad de los mapas de características producidos por la capa convolucional.
 - Capa recurrente: Una capa que introduce conexiones de retroalimentación entre neuronas, permitiendo que la red modele secuencias de datos.
 
+Combinando varias capas se obtiene un modelo que se ajusta de manera más adecuada a los datos. La estructura de las capas se suele dividir de la siguiente manera: capa de entrada, capas intermedias y capa de salida.
+
 ![image](Images/CNN/layer.png)
 
 ### Estructura de una DNN
+
+Cuando una red ANN tiene muchas capas intermedias es considerada profunda (en inglés *deep*).
 
 ![image](Images/CNN/dnn.png)
 
@@ -46,7 +52,13 @@ Hay muchos tipos de capas en una DNN, cada una con un propósito diferente. Algu
 
 ## Capas Convolucionales
 
+En una capa convolucional, se aplican filtros o *kernels* al conjunto de datos de entrada. Cada filtro es una matriz de pesos que se desliza sobre los datos de entrada (se aplica a un subconjunto de valores de la matriz denominado ventana), realizando una operación matemática en cada paso y produciendo un nuevo mapa de características.
+
 ![image](Images/CNN/convolutionallayer.png)
+
+La salida de una capa convolucional es un conjunto de mapas de características que capturan diferentes aspectos de los datos de entrada, como bordes, texturas y formas. Estos mapas de características se **aplanan** transformandose en un vector y se introducen en una **DNN**.
+
+![image](Images/CNN/cnn.png)
 
 ## Conclusión
 
