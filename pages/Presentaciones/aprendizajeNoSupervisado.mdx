@@ -1,0 +1,96 @@
+# Aprendizaje no supervisado
+
+En el campo de la inteligencia artificial, existen diferentes tipos de aprendizaje automático, y entre ellos se encuentra el aprendizaje no supervisado.  A diferencia del aprendizaje supervisado, en el que un modelo se entrena con un conjunto de datos etiquetados, en el aprendizaje no supervisado se utilizan datos no etiquetados, significando que el algoritmo no recibe instrucciones explícitas sobre cómo categorizar los datos, sino que debe encontrar patrones, tendencias y estructuras por sí mismo.
+
+El aprendizaje no supervisado es importante porque nos permite explorar grandes conjuntos de datos, encontrar relaciones y patrones ocultos, y descubrir información valiosa que de otra manera podría haber pasado desapercibida.
+
+Hay multitud de métodos, áreas y técnicas que engloba el aprendizaje no supervisado que sirven para encontrar patrones en los datos. En esta presentación vamos a introducir algunos de ellos, pero hay muchos más pues es un término muy amplio.
+
+## Detección de anomalías
+
+La detección de anomalías (también conocida como detección de outliers o detección de valores atípicos) en aprendizaje no supervisado se refiere a la identificación de patrones anómalos o inusuales en un conjunto de datos, que pueden ser diferentes en estructura o comportamiento en comparación con el resto de los datos y que no conforman con una noción definida de comportamiento normal.
+
+En la detección de anomalías, se busca identificar puntos de datos que se desvíen significativamente del patrón de los demás puntos de datos en el conjunto de datos. Estos puntos pueden ser de interés porque pueden representar casos inusuales o atípicos, o pueden ser indicativos de errores o fallas en los datos. Es interesante encontrar estos valores porque, por ejemplo, se pueden filtrar para hacer análisis estadísticos como puede ser calcular medias o desviaciones estándar o para mejorar algoritmos de machine learning, pero también estos puntos anormales pueden ser los que más se interesa estudiar y por tanto se requiere que sean los otros datos los que son filtrados.
+
+Algunos ejemplos prácticos de detección de anomalías pueden incluir la identificación de transacciones fraudulentas en el comercio electrónico, la identificación de fallas en el funcionamiento de una máquina en una fábrica, la detección de comportamientos inusuales en el tráfico de red, medicina, visión por computador, etc.
+
+Podemos dividir la detección de anomalías en tres categorías: Supervisado, semi-supervisado y no supervisado.
+
+El supervisado requerirá tener un set de imágenes etiquetadas con clases normal o anormal, pero debido a los pocos datos etiquetados que existen y debido a la naturaleza inherente desbalanceada de las clases, este acercamiento apenas se usa en la detección de anomalías.
+
+El aprendizaje semi-supervisado significa que solo una porción de los datos están etiquetados.  En este contexto lo que suele hacerse es una técnica que funciona construyendo un modelo a partir de un conjunto de datos de entrenamiento que contienen solamente datos normales. El modelo aprende a representar el comportamiento normal del conjunto de datos. Luego, se utiliza el modelo para evaluar la probabilidad de que una instancia de prueba sea un dato normal o anómalo. En otras palabras, se evalúa la probabilidad de que la instancia de prueba haya podido ser generada por el modelo creado. Si la probabilidad es inferior a un umbral se consideran datos anómalos.
+
+La tercera categoría es a través del aprendizaje no supervisado y es de lejos la más usada. Aqui hay unos cuantos métodos que se usan:
+
+Detección de densidad (Density-based detection): Este método se basa en la idea de que los puntos de datos que están alejados de las regiones densas del conjunto de datos pueden ser considerados como anomalías. El algoritmo busca regiones con baja densidad de puntos y los puntos que caen fuera de estas regiones son considerados como anomalías.
+
+Detección basada en distancia (Distance-based detection): Este método se basa en la idea de que los puntos de datos que están a una distancia significativa del resto de los puntos de datos pueden ser considerados como anomalías. Se calcula la distancia entre cada punto de datos y sus vecinos más cercanos, y los puntos que se encuentran por encima de un umbral de distancia se consideran anomalías.
+
+Agrupación (Clustering): En este método, se agrupan los puntos de datos en grupos (clusters) en función de su similitud. Los puntos que no pueden ser asignados a ningún grupo o que pertenecen a grupos muy pequeños o aislados, se consideran anomalías.
+
+## Clustering
+
+El clustering (o agrupamiento en español) es una técnica de aprendizaje no supervisado que se utiliza para agrupar un conjunto de datos en diferentes grupos o clusters en función de su similitud. En otras palabras, el objetivo del clustering es encontrar patrones en los datos que permiten dividirlos en grupos significativos.
+
+Para lograr esto, los algoritmos de clustering buscan maximizar la similitud entre los puntos de datos dentro de un mismo cluster y minimizar la similitud entre los puntos de datos de diferentes clusters. A medida que el algoritmo continúa iterando, los grupos se van ajustando y redefiniendo hasta que se alcanza una solución óptima.
+
+ El clustering como tal no es una tarea automática, sino un proceso iterativo de descubrimiento de conocimientos u optimización interactiva que implica ensayo y error. A menudo es necesario modificar el preprocesamiento de los datos y los parámetros del modelo hasta que el resultado alcanza las propiedades deseadas.
+
+
+Hay actualmente más de cien algoritmos de clustering publicados, por lo que la elección del algoritmo óptimo no es trivial y depende del contexto en el que se aplique. No hay un consenso sobre que es exactamente un cluster, por lo que ademas cada algoritmo trabaja con una noción de cluster diferente a otros.
+
+Estos algoritmos se pueden dividir en una dicotomía: hard y soft.
+
+En el hard clustering un objeto pertenece o no a un cluster mientras que en el soft clustering un objeto pertenece a cada uno de los clusters en menor o mayor grado, por ejemplo esta imagen puede ser 70% un gato o 30% un perro.
+
+También podemos hilar más fino y usar categorías como strict partitioning clustering (cada objeto sólo puede pertenecer a un único cluster), overlapping clustering (cada objeto puede pertenecer a varios clusters), strict partitioning clustering with outliers (un objeto puede no pertenecer a ningún cluster), hierarchical clustering…
+
+Algunos usos practicos del clustering son:
+
+Segmentación de clientes: Clustering puede utilizarse para segmentar a los clientes de una empresa en diferentes grupos en función de sus características, comportamientos o preferencias de compra.
+
+Análisis de redes sociales: Clustering se puede utilizar para analizar los datos de redes sociales y encontrar grupos de usuarios con intereses similares o comportamientos comunes.
+
+Análisis de ADN: Clustering puede utilizarse para agrupar diferentes secuencias de ADN en función de sus similitudes y diferencias, lo que puede ser útil para identificar patrones y relaciones genéticas.
+
+Análisis de imagen: Clustering se puede utilizar para segmentar imágenes en diferentes regiones o grupos, lo que puede ser útil para el análisis de imágenes médicas o la clasificación de objetos en imágenes.
+
+Detección de anomalías: Clustering puede utilizarse para detectar puntos de datos anómalos en un conjunto de datos, lo que puede ser útil en el diagnóstico médico o en la detección de fraude.
+
+A continuacion se explica uno de los algoritmos de clustering mas usados:
+
+El algoritmo k-means comienza con la selección aleatoria de k centroides, que pueden ser puntos de datos aleatorios o elegidos manualmente. Luego, para cada punto de datos en el conjunto, se calcula la distancia euclidiana al cuadrado entre ese punto y cada centroide.
+
+A continuación, cada punto se asigna al cluster correspondiente al centroide más cercano. Esto crea k grupos de puntos de datos, cada uno asociado a un centroide.
+
+Después de que cada punto de datos se ha asignado a su respectivo cluster, se recalcula la posición de los centroides en cada cluster. Los nuevos centroides se colocan en el centro geométrico de los puntos de datos asociados a ese cluster.
+
+Este proceso de asignación y recalculo de centroides se repite hasta que se alcanza una condición de parada. Una posible condición de parada es cuando la variación de la posición del centroide es menor que un cierto umbral predefinido.
+
+## Reducción de dimensionalidad
+
+La reducción de dimensionalidad es una técnica utilizada en aprendizaje no supervisado para disminuir la cantidad de variables o dimensiones en un conjunto de datos, manteniendo la mayor cantidad posible de información relevante.
+
+En otras palabras, la reducción de dimensionalidad se refiere a la transformación de datos de alta dimensionalidad en un espacio de menor dimensionalidad sin perder demasiada información. Esto puede ser útil en muchos casos, como por ejemplo para visualizar datos complejos, reducir el costo computacional del análisis, o incluso para mejorar la precisión de algunos modelos de aprendizaje automático.
+Se pueden dividir las técnicas de reducción de dimensionalidad en dos subtipos: Selección de características y extracción de características.
+
+Selección de características: este método implica seleccionar un subconjunto de características relevantes y descartar el resto. La selección de características puede realizarse de forma manual o automática mediante algoritmos que evalúan la relevancia de cada característica para el análisis.
+
+Extracción de características: este método implica combinar las características originales en nuevas características más útiles para el análisis. Los algoritmos de extracción de características pueden ser supervisados o no supervisados y su objetivo es encontrar una representación más compacta de los datos que retenga la mayor cantidad posible de información relevante.
+
+El Análisis de Componentes Principales (PCA, por sus siglas en inglés) es una técnica estadística utilizada para reducir la dimensionalidad de un conjunto de datos. PCA busca transformar un conjunto de variables correlacionadas en un conjunto de variables no correlacionadas llamadas componentes principales. Estos componentes principales están ordenados por su importancia en la explicación de la variabilidad de los datos, de manera que los primeros componentes principales explican la mayor parte de la varianza en los datos.
+
+La idea detrás de PCA es encontrar la combinación lineal de las variables originales que explique la mayor cantidad de variabilidad en los datos. Esta combinación lineal se convierte en el primer componente principal. El proceso se repite para encontrar el segundo componente principal, que es una combinación lineal de las variables originales que explica la mayor cantidad posible de variabilidad restante en los datos y es ortogonal al primer componente principal. Este proceso se repite para encontrar todos los componentes principales.
+
+La transformación PCA puede ser útil para reducir la dimensionalidad de un conjunto de datos y eliminar la multicolinealidad entre las variables, lo que puede mejorar la precisión de algunos modelos de aprendizaje automático. Además, los componentes principales pueden ser utilizados para visualizar los datos en un espacio de menor dimensión y para identificar las variables que contribuyen más a la variabilidad en los datos.
+
+NMF (Non-Negative Matrix Factorization) es una técnica de análisis de datos que se utiliza para descomponer una matriz no negativa en dos matrices más pequeñas, también no negativas. Es decir, si tenemos una matriz V, de tamaño n x m, se busca descomponerla en dos matrices más pequeñas W y H, tal que V sea aproximadamente igual a la multiplicación de W y H: V ≈ WH. Esta tecnica puede ser utilizada para extraer características como bordes, texturas o formas a partir de una matriz de imágenes.
+
+Un autoencoder es un tipo de red neuronal artificial utilizado en aprendizaje no supervisado para reducir la dimensionalidad de un conjunto de datos. Un autoencoder consta de dos partes principales: el codificador (encoder) y el decodificador (decoder). El codificador toma la entrada de alta dimensionalidad y la convierte en una representación de baja dimensionalidad. El decodificador toma esta representación de baja dimensionalidad y la reconstruye en una versión aproximada de la entrada original.
+
+Durante el entrenamiento, el autoencoder intenta minimizar la diferencia entre la entrada original y la salida reconstruida. Esto obliga al autoencoder a aprender una representación comprimida que capture las características más importantes de los datos, eliminando la información redundante y de baja importancia. En otras palabras, el autoencoder aprende a reducir la dimensionalidad de los datos de entrada, preservando al mismo tiempo la información esencial.
+
+Una vez que se entrena el autoencoder, se puede utilizar el codificador para obtener la representación de baja dimensionalidad de nuevos datos y luego utilizar esta representación para cualquier tarea posterior, como la clasificación o la visualización.
+
+
+
