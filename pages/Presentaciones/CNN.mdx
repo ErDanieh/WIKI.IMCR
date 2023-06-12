@@ -36,17 +36,26 @@ Hay muchos tipos de capas en una DNN, cada una con un propósito diferente. Algu
 - Capa de agrupamiento: Reduce la dimensionalidad de los mapas de características producidos por la capa convolucional.
 - Capa recurrente: Una capa que introduce conexiones de retroalimentación entre neuronas, permitiendo que la red modele secuencias de datos.
 
-Combinando varias capas se obtiene un modelo que se ajusta de manera más adecuada a los datos. La estructura de las capas se suele dividir de la siguiente manera: capa de entrada, capas intermedias y capa de salida.
+Combinando varias capas se obtiene un modelo que se ajusta de manera más adecuada a los datos. La estructura de las capas se suele dividir de la siguiente manera: capa de entrada (donde se introduce los parámetros *cuteness* y *tail length*), capas intermedias y capa de salida (donde obtenemos la etiqueta que nos indica si es un gato (*cat?*)).
 
 ![image](Images/CNN/layer.png)
 
 ### Estructura de una DNN
 
-Cuando una red ANN tiene muchas capas intermedias es considerada profunda (en inglés *deep*).
+Cuando una ANN tiene muchas capas intermedias es considerada profunda (en inglés *deep*).
 
 ![image](Images/CNN/dnn.png)
 
 ## Convolución
+
+La convolución es una operación matemática entre dos funciones, que sirve para extraer patrones en imágenes. Las imágenes se representan en los computadores como matrices, que también sirven para representar funciones discretas. De esta manera los operandos son:
+
+- La imagen
+- Una matriz que representa el patrón a extraer
+
+Deslizando el filtro sobre regiones cuadradas (denominadas ventanas) se aplica el operador convolución, extrayendo un mapa de características. Los valores altos en ese mapa se corresponden con las regiones que son más similares al patrón que extrae el filtro.
+
+Por último mencionar que pueden ser utilizada para otros propositivos que no sean extraer patrones, como aplicar un filtro gaussiano o cualquier otro tipo de distorsión a la imagen.
 
 ![image](Images/CNN/discreteconvolution.png)
 
@@ -61,5 +70,7 @@ La salida de una capa convolucional es un conjunto de mapas de características 
 ![image](Images/CNN/cnn.png)
 
 ## Conclusión
+
+Si tuviera que hacer una descripción a grosso modo diria que una Red Neuronal Convolucional representa: una función compuesta de combinaciones de combinaciones de características de las imágenes extraídas de manera automática.
 
 ![image](Images/CNN/xkcd.png)
