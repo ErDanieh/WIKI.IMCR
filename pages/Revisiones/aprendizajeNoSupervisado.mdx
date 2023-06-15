@@ -1,0 +1,38 @@
+# Aprendizaje no supervisado
+
+Autor: *Alexander Andonov Aracil*
+
+La información de la introducción se encuentra demasiado desestructurada entre los tres párrafos, la lectura se hace más llevadera si en la introducción las ideas clave van unidas. Un ejemplo sería el siguiente:
+
+El aprendizaje no supervisado es una técnica de inteligencia artificial en la que se utilizan datos no etiquetados para encontrar patrones, tendencias y estructuras por sí mismo. Es importante porque nos permite explorar grandes conjuntos de datos y descubrir información valiosa que de otra manera podría haber pasado desapercibida. Una de las técnicas del aprendizaje no supervisado es la detección de anomalías...
+
+## Clustering
+
+Lo más correcto sería decir que el clustering es una técnica de análisis de datos.
+
+Existen técnicas de clustering supervisadas, con lo cual sería apropiado indicar que se esta hablando únicamente de las no supervisadas ya que el texto parece comunicar que el clustering únicamente es no supervisado. Una técnica de clustering supervisado sería la siguiente:
+
+```json
+@techreport{finley2008supervised,
+  title={Supervised k-means clustering},
+  author={Finley, Thomas and Joachims, Thorsten},
+  year={2008}
+}
+```
+
+Cuando se introducen los usos prácticos recomiendo utilizar el elemento lista (-) de Markdown para un texto más estético y más esctructurado.
+
+Para que la explicación del funcionamiento del K-Means sea más amena sería recomendable el uso de imágenes para que sea más fácil de entender.
+
+
+## Reducción de dimensionalidad
+
+Al explicar el PCA no mencionas que el número de componentes principales siempre el igual a las dimensiones de los datos. Además de la definición matemática podrías haber hecho una definición más informal, pero más explicativa como: "Las componentes principales son los ejes que mejor describen los datos".
+
+## Conclusión
+
+El texto está generalmente bien redactado, sin embargo se plantean algunos conceptos que no llegan a desarrollarse del todo en el apartado de clustering en cuanto a:
+
+- Como se calculan los clústers: número de clústeres fijos (algoritmo K-Means), crecimiento por regiones (region growing), división de regiones (region splitting), etc.
+
+- El concepto de semilla.
